@@ -47,10 +47,22 @@ export class AuthService {
 		try {
 			return await this.account.get();
 		} catch (error) {
-			console.error("getCurrentUser auth error :: ", error);
+			console.error("Myyyy !!!! getCurrentUser auth error :: ", error);
 			throw error;
 		}
 	}
+
+	// getCurrentUser() {
+	// 	return this.account.get()
+	// 		.then(user => {
+	// 			return user;
+	// 		})
+	// 		.catch(error => {
+	// 			console.log("Appwrite service :: getCurrentUser :: error", error);
+	// 			return null;
+	// 		});
+	// }
+	
 
 	async logout() {
 		try {
@@ -64,4 +76,4 @@ export class AuthService {
 
 const authService = new AuthService();
 
-export default AuthService;
+export default authService;
