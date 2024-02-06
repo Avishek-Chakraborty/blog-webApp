@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import conf from "../config/config";
 import { Client, Account, ID } from "appwrite";
 

@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React from "react";
-
+// import React from "react";
+import PropTypes from "prop-types";
 export default function Button({
 	children,
 	type = "button",
@@ -19,3 +17,12 @@ export default function Button({
 		</button>
 	);
 }
+
+
+Button.propTypes = {
+	children: PropTypes.any,
+	type: PropTypes.string,
+	bgColor: PropTypes.string,
+	textColor: PropTypes.string,
+	className: PropTypes.string
+};

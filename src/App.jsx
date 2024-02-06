@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import './App.css'
@@ -22,7 +21,7 @@ function App() {
 				}
 			})
 			.finally(() => setLoading(false));
-	}, []);
+	}, [dispatch]);									//* Have added dispatch as a dependency 
 
 	return (
 		<div className="min-h-sc flex flex-wrap content-between bg-green-400">

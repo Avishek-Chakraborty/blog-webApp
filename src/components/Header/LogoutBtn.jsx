@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import authService from "../../appwrite/auth"; // authService import is probably wrong
+import authService from "../../appwrite/auth"; // Check authService import 
 import { logout } from "../../store/authSlice";
 
 function LogoutBtn() {
