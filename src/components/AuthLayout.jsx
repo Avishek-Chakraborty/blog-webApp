@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+
 
 export default function Protected({ children, authentication = true }) {
 	const navigate = useNavigate();
@@ -20,3 +20,7 @@ export default function Protected({ children, authentication = true }) {
 
 	return <div>Protected</div>;
 }
+Protected.propTypes = {
+    children: PropTypes.node,
+    authentication: PropTypes.bool,
+};
