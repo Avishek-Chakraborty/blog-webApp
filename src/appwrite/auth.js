@@ -28,7 +28,7 @@ export class AuthService {
 				return userAccount;
 			}
 		} catch (error) {
-			console.error("Error in auth account creation :: ", error);
+			console.error("Myyyyy!!! Error in auth account creation :: ", error);
 			throw error;
 		}
 	}
@@ -37,18 +37,24 @@ export class AuthService {
 		try {
 			return await this.account.createEmailSession(email, password);
 		} catch (error) {
-			console.error("login auth error : ", error);
+			console.error("Myyyy!!! login auth error : ", error);
 			throw error;
 		}
 	}
 
 	async getCurrentUser() {
-		try {
-			return await this.account.get();
-		} catch (error) {
-			console.error("Myyyy !!!! getCurrentUser auth error :: ", error);
-			throw error;
-		}
+		return this.account
+			.get()
+			.then((user) => {
+				return user;
+			})
+			.catch((error) => {
+				console.log(
+					"Myyy!! Appwrite service :: getCurrentUser :: error",
+					error
+				);
+				return null;
+			});
 	}
 
 	// getCurrentUser() {
@@ -67,7 +73,7 @@ export class AuthService {
 		try {
 			await this.account.deleteSessions();
 		} catch (error) {
-			console.error("LogOut auth error :: ", error);
+			console.error("Myyyy! LogOut auth error :: ", error);
 			throw error;
 		}
 	}

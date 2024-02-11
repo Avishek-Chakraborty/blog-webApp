@@ -6,15 +6,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 
-import Home from "./pages/Home"
-import AllPosts from "./pages/AllPosts.jsx"
+import Home from "./pages/Home";
+import AllPosts from "./pages/AllPosts.jsx";
 import Signup from "./pages/Signup.jsx";
-import Post from './pages/Post.jsx'
-import AddPost from './pages/AddPost.jsx'
-import EditPost from './pages/EditPost.jsx'
+import Post from "./pages/Post.jsx";
+import AddPost from "./pages/AddPost.jsx";
+import EditPost from "./pages/EditPost.jsx";
 
 import App from "./App.jsx";
-import {AuthLayout,Login} from "./components/index.js";
+import { AuthLayout, Login } from "./components/index.js";
 
 const router = createBrowserRouter([
 	{
