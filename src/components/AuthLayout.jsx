@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-
 export default function Protected({ children, authentication = true }) {
 	const navigate = useNavigate();
 	const [loader, setLoader] = useState(true);
@@ -18,9 +17,9 @@ export default function Protected({ children, authentication = true }) {
 		setLoader(false);
 	}, [authStatus, navigate, authentication]);
 
-	return <div>Protected</div>;
+	return loader ? <h1>Loading...</h1> : <>{children}</>;
 }
 Protected.propTypes = {
-    children: PropTypes.node,
-    authentication: PropTypes.bool,
+	children: PropTypes.node,
+	authentication: PropTypes.bool,
 };
