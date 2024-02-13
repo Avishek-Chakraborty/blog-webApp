@@ -50,7 +50,7 @@ export class AuthService {
 			})
 			.catch((error) => {
 				console.log(
-					"Myyy!! Appwrite service :: getCurrentUser :: error",
+					"Myyy!! Appwrite service :: getCurrentUser :: \n",
 					error
 				);
 				return null;

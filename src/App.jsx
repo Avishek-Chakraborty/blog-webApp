@@ -4,7 +4,8 @@ import './App.css'
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import {Header, Footer} from './components'
-// import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -21,20 +22,19 @@ function App() {
 				}
 			})
 			.finally(() => setLoading(false));
-	}, [dispatch]);									//* Have added dispatch as a dependency 
+	}, []);									//* Had added dispatch as a dependency 
 
-	return (
+	return !loading ? (
 		<div className="min-h-sc flex flex-wrap content-between bg-green-400">
 			<div className="w-full block">
 				<Header />
 				<main>
-					TODO
-					{/* <Outlet/> */}
+					TODO <Outlet/>
 				</main>
 				<Footer />
 			</div>
 		</div>
-	);
+	) : null;
 }
 
 export default App;

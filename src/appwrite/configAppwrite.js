@@ -1,5 +1,5 @@
 import conf from "../config/config";
-import { Client, Account, ID, Databases, Storage, Query } from "appwrite";
+import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service {
 	client = new Client();
@@ -16,7 +16,6 @@ export class Service {
 	}
 
 	async createPost({ title, slug, content, featuredImage, status, userId }) {
-		//I am also storing the slug over here
 		try {
 			return await this.databases.createDocument(
 				conf.appwriteDatabaseId,
@@ -24,7 +23,6 @@ export class Service {
 				slug,
 				{
 					title,
-					slug,
 					content,
 					featuredImage,
 					status,
@@ -32,8 +30,7 @@ export class Service {
 				}
 			);
 		} catch (error) {
-			console.error("Appwrite Config createPost error :: ", error);
-			throw error;
+			console.log("Appwrite serive :: createPost :: error", error);
 		}
 	}
 
@@ -51,7 +48,7 @@ export class Service {
 				}
 			);
 		} catch (error) {
-			console.error("Appwrite Config updatePost error :: ", error);
+			console.error("myyy!!! Appwrite Config updatePost error :: ", error);
 			throw error;
 		}
 	}
@@ -65,7 +62,7 @@ export class Service {
 			);
 			return true;
 		} catch (error) {
-			console.error("Appwrite Config deletePost error :: ", error);
+			console.error("Myyy! Appwrite Config deletePost error :: ", error);
 			return false;
 		}
 	}
@@ -78,7 +75,7 @@ export class Service {
 				slug
 			);
 		} catch (error) {
-			console.error("Appwrite Config getPost error :: ", error);
+			console.error("Myyy !!! Appwrite Config getPost error :: ", error);
 			return false;
 		}
 	}
@@ -92,7 +89,7 @@ export class Service {
 			);
 		} catch (error) {
 			console.error(
-				"Appwrite Config getPosts (all posts fetch) error :: ",
+				"Myyy!! Appwrite Config getPosts (all posts fetch) error :: ",
 				error
 			);
 			return false;
@@ -107,7 +104,7 @@ export class Service {
 				file
 			);
 		} catch (error) {
-			console.error("There is a error in uploadFile auth :: ", error);
+			console.error("Myyy!!! There is a error in uploadFile auth :: ", error);
 			return false;
 		}
 	}
@@ -117,7 +114,7 @@ export class Service {
 			await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
 			return true;
 		} catch (error) {
-			console.error("There is a error in deleteFile auth :: ", error);
+			console.error("Myy !!! There is a error in deleteFile auth :: ", error);
 			return false;
 		}
 	}
@@ -129,7 +126,7 @@ export class Service {
                 fileId
             );
 		} catch (error) {
-			console.error("There is a error in getFilePreview auth :: ", error);
+			console.error("Myyy!!! There is a error in getFilePreview auth :: ", error);
 			throw error;
 		}
 	}
@@ -141,7 +138,7 @@ export class Service {
                 fileId
             );
 		} catch (error) {
-			console.error("There is a error in downloadFile auth :: ", error);
+			console.error("Myyy!!! There is a error in downloadFile auth :: ", error);
 			throw error;
 		}
 	}

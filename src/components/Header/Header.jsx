@@ -58,9 +58,9 @@ function Header() {
 							) : null
 						)}
 						{authStatus && (
-							<l1>
+							<li>
 								<LogoutBtn />
-							</l1>
+							</li>
 						)}
 					</ul>
 				</nav>

@@ -1,20 +1,20 @@
 import React from "react";
-import store from "./store/store.js";
-import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import "./index.css";
-
-import Home from "./pages/Home";
-import AllPosts from "./pages/AllPosts.jsx";
-import Signup from "./pages/Signup.jsx";
-import Post from "./pages/Post.jsx";
-import AddPost from "./pages/AddPost.jsx";
-import EditPost from "./pages/EditPost.jsx";
-
 import App from "./App.jsx";
+import "./index.css";
+import { Provider } from "react-redux";
+import store from "./store/store.js";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
+
+import AddPost from "./pages/AddPost";
+import Signup from "./pages/Signup";
+import EditPost from "./pages/EditPost";
+
+import Post from "./pages/Post";
+
+import AllPosts from "./pages/AllPosts";
 
 const router = createBrowserRouter([
 	{
