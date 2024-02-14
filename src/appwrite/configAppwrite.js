@@ -16,8 +16,11 @@ export class Service {
 
 	async createPost({ title, slug, content, featuredImage, status, userId }) {
 		try {
-			console.log('conf.appwriteCollectionId :: ', conf.appwriteCollectionId);
-			console.log('conf.appwriteDatabaseId :: ', conf.appwriteDatabaseId);
+			console.log(
+				"conf.appwriteCollectionId :: ",
+				conf.appwriteCollectionId
+			);
+			console.log("conf.appwriteDatabaseId :: ", conf.appwriteDatabaseId);
 			return await this.databases.createDocument(
 				conf.appwriteDatabaseId,
 				conf.appwriteCollectionId,

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import parse from "html-react-parser";
 import appwriteService from "../appwrite/configAppwrite";
 import { Button, Container } from "../components";
-import parse from "html-react-parser";
-import { useSelector } from "react-redux";
 
 export default function Post() {
 	const [post, setPost] = useState(null);
@@ -58,7 +58,9 @@ export default function Post() {
 				<div className="w-full mb-6">
 					<h1 className="text-2xl font-bold">{post.title}</h1>
 				</div>
-				<div className="browser-css">{parse(post.content)}</div>
+				<div className="browser-css">
+					{parse(post.content)}
+				</div>
 			</Container>
 		</div>
 	) : null;

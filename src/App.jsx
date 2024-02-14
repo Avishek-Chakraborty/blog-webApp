@@ -6,7 +6,6 @@ import { login, logout } from "./store/authSlice";
 import {Header, Footer} from './components'
 import { Outlet } from "react-router-dom";
 
-
 function App() {
 	const [loading, setLoading] = useState(true);
 	const dispatch = useDispatch();
@@ -22,7 +21,7 @@ function App() {
 				}
 			})
 			.finally(() => setLoading(false));
-	}, []);									//* Had added dispatch as a dependency 
+	}, []);									//* Had added dispatch as a dependency
 
 	return !loading ? (
 		<div className="min-h-sc flex flex-wrap content-between bg-green-400">
