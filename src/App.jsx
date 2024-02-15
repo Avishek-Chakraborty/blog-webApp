@@ -24,7 +24,7 @@ function App() {
 	}, []);									//* Had added dispatch as a dependency
 
 	return !loading ? (
-		<div className="min-h-sc flex flex-wrap content-between bg-green-400">
+		<div className="w-full h-screen flex flex-wrap content-between bg-gray-800">
 			<div className="w-full block">
 				<Header />
 				<main>

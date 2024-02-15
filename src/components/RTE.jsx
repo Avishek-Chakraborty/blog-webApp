@@ -3,7 +3,6 @@ import { Controller } from "react-hook-form";
 import conf from "../config/config";
 import PropTypes from "prop-types";
 
-
 export default function RTE({ name, control, label, defaultValue = "" }) {
 	return (
 		<div className="w-full">
@@ -13,10 +12,10 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
 				control={control}
 				render={({ field: { onChange } }) => (
 					<Editor
-						apiKey= {conf.tinymceAPI}
+						apiKey={conf.tinymceAPI}
 						initialValue={defaultValue}
 						init={{
-							initialValue: {defaultValue},
+							initialValue: { defaultValue },
 							branding: false,
 							height: 500,
 							menubar: true,
@@ -61,6 +60,16 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
 								"body {font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 							font_family_formats:
 								"Arial=arial,helvetica,sans-serif; Courier New=courier new,courier,monospace; AkrutiKndPadmini=Akpdmi-n",
+							skin: window.matchMedia(
+								"(prefers-color-scheme: dark)"
+							).matches
+								? "oxide-dark"
+								: "oxide",
+							content_css: window.matchMedia(
+								"(prefers-color-scheme: dark)"
+							).matches
+								? "dark"
+								: "default",
 						}}
 						onEditorChange={onChange}
 					/>
@@ -70,9 +79,9 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
 	);
 }
 
-RTE.propTypes={
-    name: PropTypes.any,
-    control: PropTypes.any,
-    label: PropTypes.any,
-    defaultValue: PropTypes.any
-}
+RTE.propTypes = {
+	name: PropTypes.any,
+	control: PropTypes.any,
+	label: PropTypes.any,
+	defaultValue: PropTypes.any,
+};

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function Logo({ width = "100px" }) {
-	return <div style={{ width }}>Logo</div>;
+	return <div className="text-white" style={{ width }}>Logo</div>;
 }
 
 Logo.propTypes = {
