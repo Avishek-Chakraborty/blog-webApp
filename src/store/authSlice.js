@@ -21,7 +21,21 @@ const authSlice = createSlice({
 	},
 });
 
-export const {login, logout} = authSlice.actions
+export const { login, logout } = authSlice.actions;
 
 export default authSlice.reducer;
+/* Store -->
 
+import { configureStore } from "@reduxjs/toolkit";
+import authSlice from "./authSlice";
+const store = configureStore({
+    reducer:{
+        auth: authSlice,
+    }
+    
+})
+
+export default store;
+
+
+*/

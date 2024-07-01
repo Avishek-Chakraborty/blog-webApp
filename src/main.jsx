@@ -1,3 +1,5 @@
+// pnpm install @reduxjs/toolkit react-redux react-router-dom appwrite @tinymce/tinymce-react html-react-parser react-hook-form
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
